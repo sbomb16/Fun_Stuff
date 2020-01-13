@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AI_Test.unity
     guid: b5ccad4044fc107458df034625c4cfef
+  - enabled: 1
+    path: Assets/Scenes/Wander_Boy.unity
+    guid: d7f6620e044300946a587d54abde7f5a

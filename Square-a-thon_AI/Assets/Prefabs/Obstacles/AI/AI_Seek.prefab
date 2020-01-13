@@ -124,4 +124,3 @@ MonoBehaviour:
   player: {fileID: 0}
   seekOrFlee: 1
   forwardSpeed: 2
-  rotationSpeed: 20

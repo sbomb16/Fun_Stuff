@@ -20,7 +20,7 @@ public class Game_Manager : MonoBehaviour
     public void EndGame()
     {
 
-        // Check to see if the gameEnded boolean is trueor false
+        // Check to see if the gameEnded boolean is true or false
         if(gameEnded == false)
         {
 
@@ -46,6 +46,17 @@ public class Game_Manager : MonoBehaviour
 
         // Sets the levelCompleteUI GameObject to active
         levelCompleteUI.SetActive(true);
+
+    }
+
+    // When called, this function will quit the application
+    public void Exit_Game()
+    {
+
+        Debug.Log("Ended");
+
+        // Quits the application
+        Application.Quit();
 
     }
 }

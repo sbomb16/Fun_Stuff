@@ -13,4 +13,14 @@ public class To_Test : MonoBehaviour {
         SceneManager.LoadScene(5);
 
     }
+
+    // When called, this function loads in the Wandering scene
+    public void ToWandering()
+    {
+
+        // Finds and loads the Wandering scene by referencing its build index
+        SceneManager.LoadScene(6);
+
+    }
+
 }

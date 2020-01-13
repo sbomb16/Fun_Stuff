@@ -205,6 +205,30 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1240674737}
+    - target: {fileID: 1807792653019002, guid: 4740ee24929ad084384966a8c12a344c, type: 2}
+      propertyPath: m_Name
+      value: AI_Seek
+      objectReference: {fileID: 0}
+    - target: {fileID: 114364551624104854, guid: 4740ee24929ad084384966a8c12a344c,
+        type: 2}
+      propertyPath: maxDist
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 54795383251461254, guid: 4740ee24929ad084384966a8c12a344c,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54795383251461254, guid: 4740ee24929ad084384966a8c12a344c,
+        type: 2}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 54795383251461254, guid: 4740ee24929ad084384966a8c12a344c,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4740ee24929ad084384966a8c12a344c, type: 2}
   m_IsPrefabParent: 0
@@ -588,7 +612,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1312427806}
-  m_Material: {fileID: 13400000, guid: cc1373fb895aedc4abbc8569e953bfb2, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
