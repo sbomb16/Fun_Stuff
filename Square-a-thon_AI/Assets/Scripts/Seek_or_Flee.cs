@@ -16,9 +16,6 @@ public class Seek_or_Flee : MonoBehaviour {
     // The speed at which the AI object will go
     public float forwardSpeed = 2f;
 
-    // The speed at which the AI object will rotate
-    public float rotationSpeed = 20f;    
-
     // Initialized on startup
     void Start()
     {
