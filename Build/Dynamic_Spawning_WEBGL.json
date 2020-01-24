@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "Dynamic_Spawning_WEBGL.data.unityweb",
+"asmCodeUrl": "Dynamic_Spawning_WEBGL.asm.code.unityweb",
+"asmMemoryUrl": "Dynamic_Spawning_WEBGL.asm.memory.unityweb",
+"asmFrameworkUrl": "Dynamic_Spawning_WEBGL.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
