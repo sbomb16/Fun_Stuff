@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fc02762f548c52e48974fcd5b5f43445
+timeCreated: 1579802973
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - small_Egg: {fileID: 1771486933278384, guid: 8f71b4fc2db49134ab67b96d8245da06,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

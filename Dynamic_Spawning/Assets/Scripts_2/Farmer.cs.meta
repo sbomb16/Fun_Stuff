@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 76114a35b0ef14444ac039fe84afbdd0
+timeCreated: 1579802944
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - farm_Man: {fileID: 1736305226707794, guid: a5e4dd9ec181a8c40b21b2d9b6892b75, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
