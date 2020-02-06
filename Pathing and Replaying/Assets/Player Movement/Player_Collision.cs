@@ -22,12 +22,19 @@ public class Player_Collision : MonoBehaviour {
         // This checks to see if the Player object has hit an object with the Obstacle tag
         if(coll.collider.tag == "Obstacle")
         {
+            if(Command_Log.doQueue == true)
+            {
+                SceneManager.LoadScene(5);
+            }
+            else
+            {
+                // Disables the Player object's movement when an object with the Obstacle tag is hit
+                movement.enabled = false;
 
-            // Disables the Player object's movement when an object with the Obstacle tag is hit
-            movement.enabled = false;
-
-            // Calls the EndGame function from the Game_Manager script
-            FindObjectOfType<Game_Manager>().EndGame();
+                // Calls the EndGame function from the Game_Manager script
+                FindObjectOfType<Game_Manager>().EndGame();
+            }
+            
 
         // This checks to see if the Player object has hit an object with the "Platform" tag
         } else if(coll.collider.tag == "Platform")
