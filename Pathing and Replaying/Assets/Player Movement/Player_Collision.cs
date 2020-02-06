@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player_Collision : MonoBehaviour {
 
     // Instance of the Player_Movement script
     public Player_Movement movement;
+    public Key_Counter keys;
+
+    private void Start()
+    {
+        //keys = GetComponent<Key_Counter>();
+    }
 
     // Detects whether an object has made a collision
     void OnCollisionEnter(Collision coll)

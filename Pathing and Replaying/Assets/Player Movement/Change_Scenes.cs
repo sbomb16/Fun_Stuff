@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Change_Scenes : MonoBehaviour {
 
     public int sceneNum;
+    public bool hasQueue = true;
 
     public void changeScenes(int scene)
     {
@@ -26,6 +27,10 @@ public class Change_Scenes : MonoBehaviour {
 
             case 3:
                 SceneManager.LoadScene(3);
+                if (hasQueue && SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(5))
+                {
+                    Command_Log.doQueue = true;
+                }
                 return;
 
             case 4:

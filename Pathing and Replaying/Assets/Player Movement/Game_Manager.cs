@@ -81,7 +81,7 @@ public class Game_Manager : MonoBehaviour
         Player_Movement playerMovement = FindObjectOfType<Player_Movement>();
         player = playerMovement.gameObject;
 
-        if (Command_Log.commands.Count > 0)
+        if (Command_Log.commands.Count > 0 && Command_Log.doQueue == true)
         {
             instantReplay = true;
             restartDelay = Time.timeSinceLevelLoad;

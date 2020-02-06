@@ -27,7 +27,7 @@ public class Player_Movement : MonoBehaviour {
     // Boolean that determines whether the Player object can double jump
     public bool canDoubleJump = false;
 
-    public int keysCollected;
+    public int keysCollected = 0;
 
     // This function controls the jumping feature
     void Jumping()
