@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Key
   - End
+  - Time
   layers:
   - Default
   - TransparentFX
