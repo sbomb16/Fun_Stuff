@@ -405,7 +405,7 @@ public class Kinematics : MonoBehaviour {
                 behaviors[3] = new BehaviorAndWeight();
 
                 behaviors[3].behavior = obstacles;
-                behaviors[3].weight = 10f;
+                behaviors[3].weight = 0f;
 
                 flocking.behaviors = behaviors;
 

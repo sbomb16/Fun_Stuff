@@ -377,6 +377,12 @@ MonoBehaviour:
   avoidance: []
   maxSpeed: 2
   angVelMax: 2
+  maxAccel: 0
+  maxRot: 0
+  targetRad: 0
+  slowRad: 0
+  threshold: 0
+  decay: 0
   flee: 0
   fleeX: 5
   fleeZ: 5
@@ -729,7 +735,13 @@ MonoBehaviour:
   - {fileID: 1544116940}
   avoidance: []
   maxSpeed: 2.5
-  angVelMax: 30
+  angVelMax: 2
+  maxAccel: 10
+  maxRot: 2
+  targetRad: 0.5
+  slowRad: 6
+  threshold: 10
+  decay: 1000
   flee: 0
   fleeX: 5
   fleeZ: 5
@@ -992,7 +1004,13 @@ MonoBehaviour:
   - {fileID: 1544116940}
   avoidance: []
   maxSpeed: 2.5
-  angVelMax: 30
+  angVelMax: 2
+  maxAccel: 10
+  maxRot: 2
+  targetRad: 0.5
+  slowRad: 6
+  threshold: 10
+  decay: 1000
   flee: 0
   fleeX: 5
   fleeZ: 5
@@ -1233,7 +1251,13 @@ MonoBehaviour:
   kinTargets: []
   avoidance: []
   maxSpeed: 2
-  angVelMax: 10
+  angVelMax: 5
+  maxAccel: 50
+  maxRot: 2
+  targetRad: 0
+  slowRad: 0
+  threshold: 0
+  decay: 0
   flee: 0
   fleeX: 5
   fleeZ: 5
@@ -1711,7 +1735,13 @@ MonoBehaviour:
   - {fileID: 1544116940}
   avoidance: []
   maxSpeed: 2.5
-  angVelMax: 30
+  angVelMax: 2
+  maxAccel: 10
+  maxRot: 2
+  targetRad: 0.5
+  slowRad: 6
+  threshold: 10
+  decay: 1000
   flee: 0
   fleeX: 5
   fleeZ: 5
