@@ -23,11 +23,16 @@ public class MoveDiagonalLeftBackwardsPlayerState : IPlayerStates
             movingBackwards.Enter(player);
         }
 
-        if (!Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
+        if (!Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
 
             MoveLeftPlayerState movingLeft = new MoveLeftPlayerState();
             movingLeft.Enter(player);
+        }
+        if(!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A))
+        {
+            StandingPlayerState standingState = new StandingPlayerState();
+            standingState.Enter(player);
         }
 
         if (Input.GetKey(KeyCode.LeftShift))

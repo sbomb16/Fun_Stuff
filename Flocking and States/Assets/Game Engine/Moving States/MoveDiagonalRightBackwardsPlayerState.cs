@@ -28,6 +28,12 @@ public class MoveDiagonalRightBackwardsPlayerState : IPlayerStates
             movingBackwards.Enter(player);
         }
 
+        if(!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S))
+        {
+            StandingPlayerState standingState = new StandingPlayerState();
+            standingState.Enter(player);
+        }
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             // transition to ducking

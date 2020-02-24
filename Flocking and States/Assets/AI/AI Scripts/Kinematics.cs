@@ -74,7 +74,7 @@ public class Kinematics : MonoBehaviour {
         obstacles = new Obstacle_Avoidance();
         flocking = new Blended_Steering();
 
-        behaviors = new BehaviorAndWeight[3];
+        behaviors = new BehaviorAndWeight[4];
 
     }
 	
@@ -379,6 +379,8 @@ public class Kinematics : MonoBehaviour {
 
                 looky.character = this;
 
+                obstacles.character = this;
+
                 separate.character = this;
                 separate.avoid = kinTargets;
 
@@ -399,6 +401,11 @@ public class Kinematics : MonoBehaviour {
 
                 behaviors[2].behavior = looky;
                 behaviors[2].weight = 50f;
+
+                behaviors[3] = new BehaviorAndWeight();
+
+                behaviors[3].behavior = obstacles;
+                behaviors[3].weight = 10f;
 
                 flocking.behaviors = behaviors;
 

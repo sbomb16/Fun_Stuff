@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle_Avoidance{
+public class Obstacle_Avoidance : SteeringBehavior
+{
 
     public Kinematics character;
 
@@ -10,14 +11,14 @@ public class Obstacle_Avoidance{
 
     public float avoidDistance = 5f;
 
-    public float lookAhead = 2f;
+    public float lookAhead = 5f;
 
     public Vector3 ray;
 
     //public Kinematics character;
     //public GameObject targetFound;    
 
-	public SteeringOutput GetSteering()
+	public override SteeringOutput GetSteering()
     {
         // Bit shift the index of the layer (8) to get a bit mask
         int layerMask = 1 << 8;
@@ -30,27 +31,29 @@ public class Obstacle_Avoidance{
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(character.transform.position, character.transform.TransformDirection(Vector3.forward), out hit, avoidDistance, layerMask))
         {
-            Debug.DrawRay(character.transform.position, character.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log("Did Hit");
+            //Debug.DrawRay(character.transform.position, character.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            //Debug.Log("Did Hit");
             target = hit.collider.gameObject;
         }
         else
         {
             Debug.DrawRay(character.transform.position, character.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            Debug.Log("Did not Hit");
+            //Debug.Log("Did not Hit");
         }
 
         SteeringOutput result = new SteeringOutput();
 
         if (!target)
         {
-            Debug.Log("Oops");
+            //Debug.Log("Oops");
             result.linear = Vector3.zero;
             result.angular = 0;
             return result;
         }
 
         float dotResult = Vector3.Dot(character.linearVel.normalized, target.transform.position);
+
+        //Debug.Log(dotResult);
 
         if (dotResult < -0.9 && dotResult > -1.1)
         {
