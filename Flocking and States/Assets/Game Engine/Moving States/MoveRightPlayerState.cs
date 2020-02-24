@@ -26,7 +26,7 @@ public class MoveRightPlayerState : IPlayerStates
             MoveDiagonalRightForwardPlayerState movingForwardRight = new MoveDiagonalRightForwardPlayerState();
             movingForwardRight.Enter(player);
         }
-        if(Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S) && player.onGround == true)
+        if(Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
         {
             MoveDiagonalRightBackwardsPlayerState movingBackwardsRight = new MoveDiagonalRightBackwardsPlayerState();
             movingBackwardsRight.Enter(player);
@@ -40,7 +40,7 @@ public class MoveRightPlayerState : IPlayerStates
 
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && player.onGround == true)
         {
             JumpingPlayerState jumpingState = new JumpingPlayerState();
             jumpingState.Enter(player);
