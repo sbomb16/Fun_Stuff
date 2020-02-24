@@ -10,9 +10,9 @@ public class Separation : SteeringBehavior
 
     public Kinematics[] avoid;
 
-    public float maxAccel = .1f;
-    public float threshold = 5f;
-    public float decay = 2f;
+    public float maxAccel = 50f;
+    public float threshold = 2f;
+    public float decay = 3f;
     public float distance;
     float strength;
 
@@ -25,10 +25,11 @@ public class Separation : SteeringBehavior
 
         if(avoid != null)
         {
-            for (int i = 0; i < avoid.Length - 1; i++)
+            foreach (Kinematics c in avoid)
             {
 
-                direction = character.transform.position - avoid[i].transform.position;
+                //Debug.Log(c);
+                direction = character.transform.position - c.transform.position;
                 distance = direction.magnitude;
 
                 //Debug.Log(distance);
@@ -36,9 +37,9 @@ public class Separation : SteeringBehavior
                 if (distance < threshold)
                 {
 
-                    strength = Mathf.Min(decay / (distance * distance), maxAccel);
+                    strength = Mathf.Max(decay / (distance * distance), maxAccel);
 
-                    Debug.Log(strength);
+                    //Debug.Log(strength);
 
                     direction.Normalize();
                     result.linear += strength * direction;
@@ -47,11 +48,12 @@ public class Separation : SteeringBehavior
                 else if (distance > threshold)
                 {
 
-                    strength = Mathf.Min(decay / (distance * distance), maxAccel);
+                    strength = Mathf.Max(decay / (distance * distance), maxAccel);
+                    //Debug.Log(strength);
 
                     direction.Normalize();
 
-                    Debug.Log(direction);
+                    //Debug.Log(direction);
                     result.linear -= strength * direction;
 
                 }

@@ -17,14 +17,12 @@ public class Look_Where_Going : Align
         float angle = Mathf.Atan2(velocity.x, velocity.z) * Mathf.Rad2Deg;
         if (!target)
         {
-
+            character.transform.eulerAngles = new Vector3(0, angle, 0);
             return base.GetSteering();
 
         }
         else
-        {
-
-            character.transform.eulerAngles = new Vector3(0, angle, 0);
+        {               
 
             return base.GetSteering();
 

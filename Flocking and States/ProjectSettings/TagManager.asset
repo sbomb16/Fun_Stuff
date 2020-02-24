@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Hoop
+  - Platform
+  - Boy
   layers:
   - Default
   - TransparentFX

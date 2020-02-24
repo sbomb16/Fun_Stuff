@@ -7,13 +7,13 @@ public class Arrival : SteeringBehavior{
     public Kinematics character;
     public GameObject target;
 
-    public float maxAccel = 20f;
-    public float maxSpeed = 5f;
+    public float maxAccel;
+    public float maxSpeed;
 
-    public float targetRad = 1.5f;
-    public float slowRad = 3f;
+    public float targetRad;
+    public float slowRad;
 
-    public float timeToTarget = 0.1f;
+    public float timeToTarget = .01f;
 
     public Vector3 direction;
     public float distance;
@@ -56,7 +56,7 @@ public class Arrival : SteeringBehavior{
             result.linear *= maxAccel;
         }
 
-        result.angular = 0;
+        //result.angular = 0;
         return result;
     }
 }

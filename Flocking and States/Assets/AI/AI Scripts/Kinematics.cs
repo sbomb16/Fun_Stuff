@@ -16,8 +16,17 @@ public class Kinematics : MonoBehaviour {
 
     public Kinematics[] avoidance;
 
-    public float maxSpeed = .1f;
-    public float angVelMax = 10f;
+    public float maxSpeed;
+    public float angVelMax;
+
+    public float maxAccel;
+    public float maxRot;
+
+    public float targetRad;
+    public float slowRad;
+
+    public float threshold;
+    public float decay;
 
     public bool flee;
 
@@ -256,10 +265,33 @@ public class Kinematics : MonoBehaviour {
 
                 break;
 
+            case "Path Follow":
+
+                pathFollow.path = aiTargets;
+                pathFollow.character = this;
+
+                pathFollow.maxAccel = maxAccel;
+                pathFollow.maxSpeed = maxSpeed;
+
+                pathFollow.targetRad = targetRad;
+                pathFollow.slowRad = slowRad;
+
+                moving = pathFollow.GetSteering();
+
+                movement.linear = moving.linear;
+
+                break;
+
             case "Path Follow Face":
                 
                 pathFollow.path = aiTargets;
                 pathFollow.character = this;
+
+                pathFollow.maxAccel = maxAccel;
+                pathFollow.maxSpeed = maxSpeed;
+
+                pathFollow.targetRad = targetRad;
+                pathFollow.slowRad = slowRad;
 
                 moving = pathFollow.GetSteering();
 
@@ -279,6 +311,9 @@ public class Kinematics : MonoBehaviour {
 
                 separate.character = this;
                 separate.avoid = kinTargets;
+
+                separate.threshold = threshold;
+                separate.decay = decay;
 
                 //separate.avoid = avoidance;
 
@@ -336,27 +371,39 @@ public class Kinematics : MonoBehaviour {
                 arrive.character = this;
                 arrive.target = aiTarget;
 
+                arrive.maxAccel = maxAccel;
+                arrive.maxSpeed = maxSpeed;
+
+                arrive.targetRad = targetRad;
+                arrive.slowRad = slowRad;
+
                 looky.character = this;
 
                 separate.character = this;
                 separate.avoid = kinTargets;
 
+                separate.threshold = threshold;
+                separate.decay = decay;
+
                 behaviors[0] = new BehaviorAndWeight();
 
                 behaviors[0].behavior = arrive;
-                behaviors[0].weight = 5f;
+                behaviors[0].weight = 35f;
 
                 behaviors[1] = new BehaviorAndWeight();
 
                 behaviors[1].behavior = separate;
-                behaviors[1].weight = 5f;
+                behaviors[1].weight = 1f;
 
                 behaviors[2] = new BehaviorAndWeight();
 
                 behaviors[2].behavior = looky;
-                behaviors[2].weight = 5f;
+                behaviors[2].weight = 50f;
 
                 flocking.behaviors = behaviors;
+
+                flocking.maxAccel = maxAccel;
+                flocking.maxRotation = maxRot;
 
                 moving = flocking.GetSteering();
 

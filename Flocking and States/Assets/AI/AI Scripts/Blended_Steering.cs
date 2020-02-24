@@ -12,8 +12,8 @@ public class Blended_Steering : SteeringBehavior {
 
     public BehaviorAndWeight[] behaviors;
 
-    float maxAccel = 1f;
-    float maxRotation = 5f;
+    public float maxAccel = 50f;
+    public float maxRotation = 30f;
 
     public override SteeringOutput GetSteering()
     {
@@ -23,7 +23,7 @@ public class Blended_Steering : SteeringBehavior {
         
         foreach(BehaviorAndWeight b in behaviors)
         {
-            Debug.Log(b.behavior);
+            //Debug.Log(b.behavior);
             SteeringOutput s = b.behavior.GetSteering();
             if(s != null)
             {
