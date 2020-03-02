@@ -14,3 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Engine Dev.unity
     guid: b113d01c102d13b4c8d0560ef2004f10
+  - enabled: 1
+    path: Assets/AI Prod.unity
+    guid: ca037aca32de2f547a402e157f0d1100
+  - enabled: 1
+    path: Assets/Engine Prod.unity
+    guid: 5c6ea7bd6fab51741911ca07744a4261

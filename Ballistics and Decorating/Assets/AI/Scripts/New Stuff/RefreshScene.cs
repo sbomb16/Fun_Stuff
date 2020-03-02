@@ -11,5 +11,10 @@ public class RefreshScene : MonoBehaviour {
         {
             SceneManager.LoadScene(1);
         }
+
+        if(scene == 3)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 }

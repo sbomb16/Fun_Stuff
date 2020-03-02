@@ -6,14 +6,14 @@ public class MousePosition : MonoBehaviour {
 
     public GameObject mouse;
 
-    public float xMin;
-    public float xMax;
+    public float xMin = -25f;
+    public float xMax = 25f;
 
-    public float yMin;
-    public float yMax;
+    public float yMin = 5f;
+    public float yMax = 1f;
 
-    public float zMin;
-    public float zMax;
+    public float zMin = -10f;
+    public float zMax = 20f;
 
     float newX;
     float newY;
@@ -22,13 +22,18 @@ public class MousePosition : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        NewMousePos(mouse);
+
+	}
+
+    public void NewMousePos(GameObject mgMouse)
+    {
         newX = Random.Range(xMin, xMax);
         newY = Random.Range(yMin, yMax);
         newZ = Random.Range(zMin, zMax);
 
-        mouse.gameObject.transform.position = new Vector3(newX, newY, newZ);
-
-	}
+        mgMouse.gameObject.transform.position = new Vector3(newX, newY, newZ);
+    }
 	
 	
 }
