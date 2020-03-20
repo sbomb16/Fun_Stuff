@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cannon : MonoBehaviour {
 
     private bool mIsQuitting;
+    public Rigidbody cannonBall;
     public Rigidbody rb;
 
     private void OnEnable()
@@ -27,9 +28,13 @@ public class Cannon : MonoBehaviour {
 
     void ShootCannon()
     {
+        Rigidbody cannonShot;        
         rb = gameObject.GetComponent<Rigidbody>();
-        rb.useGravity = true;
-        rb.AddForce(new Vector3(0, 500, 500));
+        //rb.useGravity = true;
+        // rb.AddForce(new Vector3(0, 500, 500));
+        cannonShot = Instantiate(cannonBall, rb.transform);
+        cannonShot.useGravity = true;
+        cannonShot.AddForce(new Vector3(0, 0, 100000));
         Debug.Log("Shot the cannon!");
     }
 }

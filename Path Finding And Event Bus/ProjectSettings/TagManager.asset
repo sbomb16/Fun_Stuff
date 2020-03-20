@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Platform
+  - Side1
+  - Side2
+  - Side3
+  - Side4
   layers:
   - Default
   - TransparentFX
